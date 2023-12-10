@@ -1,10 +1,22 @@
 import java.util.Arrays;
-
 interface SortingStrategy {
+
+    /**
+     *
+     * @param array
+     */
     void sort(int[] array);
 }
 
+/**
+ * javadoc.
+ */
 class BubbleSortStrategy implements SortingStrategy {
+
+    /**
+     *
+     * @param array
+     */
     @Override
     public void sort(int[] array) {
         // Implement Bubble Sort
@@ -24,6 +36,11 @@ class BubbleSortStrategy implements SortingStrategy {
 }
 
 class SelectionSortStrategy implements SortingStrategy {
+
+    /**
+     *
+     * @param array
+     */
     @Override
     public void sort(int[] array) {
         // Implement Selection Sort
@@ -44,20 +61,37 @@ class SelectionSortStrategy implements SortingStrategy {
 class Sorter {
     private SortingStrategy strategy;
 
+    /**
+     *
+     * @param strategy
+     */
     public Sorter(SortingStrategy strategy) {
         this.strategy = strategy;
     }
 
+    /**
+     *
+     * @param strategy
+     */
     public void setStrategy(SortingStrategy strategy) {
         this.strategy = strategy;
     }
 
+    /**
+     *
+     * @param array
+     */
     public void sortArray(int[] array) {
         strategy.sort(array);
     }
 }
 
 public class StrategyPatternDemo {
+
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         int[] array = { 3, 2, 5, 4, 1, 10, 9, 242, 59 };
 
