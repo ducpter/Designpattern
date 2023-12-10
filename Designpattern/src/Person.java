@@ -9,6 +9,12 @@ public class Person {
     private Person spouse;
     private List<Person> children;
 
+    /**
+     *
+     * @param name
+     * @param birthDate
+     * @param gender
+     */
     public Person(String name, String birthDate, String gender) {
         this.name = name;
         this.birthDate = birthDate;
@@ -16,6 +22,10 @@ public class Person {
         this.children = new ArrayList<>();
     }
 
+    /**
+     *
+     * @param partner
+     */
     public void marry(Person partner) {
         if (this.spouse == null && partner.spouse == null) {
             this.spouse = partner;
@@ -23,18 +33,34 @@ public class Person {
         }
     }
 
+    /**
+     *
+     * @param child
+     */
     public void addChild(Person child) {
         children.add(child);
     }
 
+    /**
+     *
+     * @return
+     */
     public Person getSpouse() {
         return spouse;
     }
 
+    /**
+     *
+     * @return
+     */
     public boolean isSingle() {
         return spouse == null;
     }
 
+    /**
+     *
+     * @return
+     */
     public boolean hasTwoChildren() {
         return children.size() == 2;
     }
@@ -64,6 +90,10 @@ public class Person {
                 .collect(Collectors.toList());
     }
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         // Tạo đối tượng Person và thiết lập mối quan hệ
         Person james = new Person("James", "1970-01-01", "Male");
